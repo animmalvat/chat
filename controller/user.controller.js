@@ -7,16 +7,15 @@ exports.signup = (req,res) => {
         return res.send(msg(null,true,"please enter credentials"));
     }
     else{
-        var name = req.body.name;
-        var email = req.body.email;
-        var password = req.body.password;
+       
   
-        userModel.find({email : email}).then(function(data){
-            if(!data) {
+        userModel.findOne({email : req.body.email}).then(function(data){
+            if(data == null) {
+                
                 var user = new userModel({
-                    name : name,
-                    email : email,
-                    password : password
+                    name : req.body.name,
+                    email : req.body.email,
+                    password : req.body.password
                 })
                 
                 user.save(function(){
