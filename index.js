@@ -21,7 +21,7 @@ mongoose.connect(
     function(err, db) {
         if (err) {
             console.log(
-                "please restart the server and/or check the connection"
+                "please restart the mongodb server and/or check the connection"
             );
         } else {
             console.log("mongodb connected");
