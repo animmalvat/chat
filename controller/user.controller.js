@@ -6,6 +6,12 @@ exports.helloworld = (req, res)=>{
     res.send("Hello World");
 }
 
+exports.welcomeapi = (req, res)=>{
+    var message = "Welcome to chat backend api, this api was made in node js express js. to use this api";
+    message += "you can use /methods for further api calls, you know what I am saying if you are anim";
+    res.send(message);
+}
+
 exports.signup = (req,res) => {
    
     if(!req.body.email && !req.body.password ) {
