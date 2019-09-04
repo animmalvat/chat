@@ -1,6 +1,11 @@
 const userModel = require('../models/user.model');
 const Token = require('../middelware/token');
 const msg = require('../middelware/response');
+
+exports.helloworld = (req, res)=>{
+    res.send("Hello World");
+}
+
 exports.signup = (req,res) => {
    
     if(!req.body.email && !req.body.password ) {
